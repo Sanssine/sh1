@@ -1,0 +1,6 @@
+autre commande : commande not found
+env : modifier la variable env
+	: test file / permission
+unsetenv : aucun message d'erreur
+setenv : espace -> '='
+	   : '=' -> Syntax Error

@@ -12,7 +12,7 @@
 
 #include "sh1.h"
 
-char	*ft_read()
+char	*ft_read(void)
 {
 	char	*cmd;
 	char	*tur;
@@ -31,6 +31,6 @@ char	*ft_read()
 		cmd = ft_strjoin(cmd, buff);
 		free(tur);
 	}
-	cmd[ft_strlen(cmd) - 1] = 0; 
+	cmd[ft_strlen(cmd) - 1] = 0;
 	return (cmd);
 }

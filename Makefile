@@ -34,6 +34,11 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
+test:
+	make re
+	./ft_minishell1
+	make fclean
+
 re: fclean $(NAME)
 
-.PHONY: all $(NAME) clean fclean re
+.PHONY: all $(NAME) clean fclean re test

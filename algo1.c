@@ -56,3 +56,15 @@ void	print_tab(char **tab)
 			tab++;
 		}
 }
+
+char	*ft_tri_join(char *str, char *ptdr, char *mdr)
+{
+	char *join;
+	char *ze;
+
+	join = ft_strjoin(str, ptdr);
+	ze = join;
+	join = ft_strjoin(join, mdr);
+	free(ze);
+	return (join);
+}

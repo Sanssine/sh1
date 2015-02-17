@@ -12,7 +12,7 @@
 
 #include "sh1.h"
 
-char**	exit_shell(int ac, char **av, char **env)
+char	**exit_shell(int ac, char **av, char **env)
 {
 	free(av[ac]);
 	av[ac] = 0;
@@ -42,7 +42,7 @@ int		main(int ac, char **av, char **envp)
 {
 	char	**env;
 	t_cmd	*cmd;
-	
+
 	if (!ac)
 		ac = 0;
 	if (!av)

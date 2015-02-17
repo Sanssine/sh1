@@ -12,24 +12,14 @@
 
 #include "sh1.h"
 
-char**	print_env(int ac, char **av, char **env)
+char	**ft_env(int ac, char **av, char **env)
 {
-	int		i;
+	int		status;
 
-	if (ac > 1)
+	if (ac == 1)
 	{
-		write(2, "env: ", 4);
-		ft_putstr_fd(av[0], 2);
-		write(2, ": Permission denied\n", 20);
-	}
-	else
-	{
-		i = -1;
-		while(env[++i])
-		{
-			ft_putstr(env[i]);
-			write(1, "\n", 1);
-		}
+		print_tab(env);
+		return (env);
 	}
 	return (env);
 }
@@ -48,15 +38,17 @@ void	add_env(char **env, char *add)
 int		test_arg(char *arg)
 {
 	char	*i;
+	char	*j;
 
 	i = strchr(arg, '=');
-	if (!i)
+	j = strrchr(arg, '=');
+	if (!i || i != j)
 		return (0);
 	while (--i != arg)
 		if ((*i > 'Z' || *i < 'A') && *i != '_')
 			return (0);
 	if ((*i > 'Z' || *i < 'A') && *i != '_')
-			return (0);
+		return (0);
 	return (1);
 }
 

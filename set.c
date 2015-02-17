@@ -27,7 +27,7 @@ char	**i_env(char **envp)
 	return (first);
 }
 
-t_cmd	*new_cmd(char *str, char** (*fonction)(int, char**, char**))
+t_cmd	*new_cmd(char *str, char **(*fonction)(int, char**, char**))
 {
 	t_cmd	*news;
 
@@ -39,7 +39,7 @@ t_cmd	*new_cmd(char *str, char** (*fonction)(int, char**, char**))
 	return (news);
 }
 
-void	add_cmd(t_cmd *first, char *n, char** (*f)(int, char**, char**))
+void	add_cmd(t_cmd *first, char *n, char **(*f)(int, char**, char**))
 {
 	t_cmd *tmp;
 
@@ -49,11 +49,11 @@ void	add_cmd(t_cmd *first, char *n, char** (*f)(int, char**, char**))
 	tmp->next = new_cmd(n, f);
 }
 
-t_cmd	*i_cmd()
+t_cmd	*i_cmd(void)
 {
 	t_cmd	*first;
 
-	first = new_cmd("env", &(print_env));
+	first = new_cmd("env", &(ft_env));
 	add_cmd(first, "exit", &(exit_shell));
 	add_cmd(first, "unsetenv", &(ft_unsetenv));
 	add_cmd(first, "setenv", &(ft_setenv));

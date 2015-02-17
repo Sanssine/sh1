@@ -73,7 +73,7 @@ char	**ft_unsetenv(int ac, char **av, char **env)
 		j = -1;
 		while (unset[++j])
 			if (!ft_strncmp(unset[j], env[i], ft_strlen(unset[j])))
-			rm_env(env, env + i);
+				rm_env(env, env + i);
 	}
 	new_env = cp_tab(env);
 	ft_freetab(unset);
